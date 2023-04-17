@@ -1,11 +1,14 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
+import requests
+import shutil
 
+# from selenium import webdriver
 
 driver = webdriver.Edge()
 # navigate to the Google Images search results page
-search_term = "cute puppies"
+search_term = "The Role of Positive Thinking in Enhancing Physical Recovery"
 google_images_url = f"https://www.google.com/search?q={search_term}&tbm=isch"
 driver.get(google_images_url)
 
@@ -13,6 +16,7 @@ driver.get(google_images_url)
 image_divs = driver.find_elements( By.CLASS_NAME,'isv-r')
 
 i = 0
+
 for image_div in image_divs[1:]:
     try:
         img_tag = image_div.find_element(By.TAG_NAME, 'img')
