@@ -17,7 +17,7 @@ image_divs = driver.find_elements( By.CLASS_NAME,'isv-r')
 
 i = 0
 
-for image_div in image_divs[1:]:
+for image_div in image_divs[1:]: # Set limit here example image_divs[1:5] for 4 images
     try:
         img_tag = image_div.find_element(By.TAG_NAME, 'img')
         img_tag.click()
